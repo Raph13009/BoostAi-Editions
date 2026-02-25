@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Author Display Font */
+@font-face {
+  font-family: "Author";
+  src: url("/fonts/author/Author-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Author";
+  src: url("/fonts/author/Author-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  --font-display: "Author", serif;
+  --color-ink: #0a0908;
+  --color-slate: #22333b;
+  --color-parchment: #eae0d5;
+  --color-sand: #c6ac8f;
+  --color-umber: #5e503f;
+}
+
+/* Base reset & typography */
+@layer base {
+  html {
+    @apply antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-parchment text-ink;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      "Helvetica Neue", Arial, sans-serif;
+    font-feature-settings: "kern" 1, "liga" 1;
+  }
+}
