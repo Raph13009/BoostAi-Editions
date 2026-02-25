@@ -3,43 +3,43 @@ import Image from "next/image";
 export function Hero() {
   return (
     <section
-      className="relative flex min-h-screen flex-col bg-[#EAE0D5] px-8 pt-8 pb-[90px] md:px-[120px] md:pt-[120px]"
+      className="relative flex min-h-screen flex-col overflow-hidden bg-[#EAE0D5] px-8 pt-8 pb-[90px] md:px-[120px] md:pt-[120px]"
       aria-labelledby="hero-title"
     >
-      {/* Top Glass Component */}
-      <div className="absolute left-8 right-8 top-[60px] md:left-[120px] md:right-[120px]">
-        <div
-          className="relative mx-auto flex h-[58px] w-full max-w-[600px] items-center justify-between rounded-[20px] px-5"
-          style={{
-            background:
-              "linear-gradient(to bottom, rgba(255,255,255,0.06) 0%, transparent 100%), rgba(198, 172, 143, 0.2)",
-            backdropFilter: "blur(12px)",
-            WebkitBackdropFilter: "blur(12px)",
-            border: "1px solid rgba(255,255,255,0.25)",
-          }}
-        >
-          <Image
-            src="/brand/logo-black.svg"
-            alt="BoostAI Editions"
-            width={44}
-            height={28}
-            className="h-7 w-[44px] shrink-0 object-contain object-left"
-          />
-          <span
-            className="absolute left-1/2 -translate-x-1/2 text-[20px] text-[#0A0908]"
-            style={{
-              fontFamily: "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
-              lineHeight: 1.6,
-            }}
-          >
-            BoostAI Editions
-          </span>
-          <div className="h-7 w-[44px] shrink-0" aria-hidden="true" />
-        </div>
-      </div>
+      {/* Background video */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        className="absolute inset-0 z-0 h-full w-full object-cover pointer-events-none"
+        aria-hidden
+        role="presentation"
+      >
+        <source src="/video/video-hero.mp4" type="video/mp4" />
+      </video>
+
+      {/* Overlay */}
+      <div className="absolute inset-0 z-[5] bg-[#EAE0D5]/20" aria-hidden />
+
+      {/* Logo */}
+      <a
+        href="/"
+        className="absolute left-6 top-6 z-20 w-7 md:left-[60px] md:top-[60px] md:w-9"
+        aria-label="BoostAI Editions home"
+      >
+        <Image
+          src="/brand/logo-black.svg"
+          alt="BoostAI Editions"
+          width={36}
+          height={23}
+          className="h-auto w-full object-contain object-left"
+        />
+      </a>
 
       {/* Bottom-right content */}
-      <div className="mt-auto flex flex-col items-end">
+      <div className="relative z-10 mt-auto flex flex-col items-end">
         <div className="w-full max-w-[750px] text-right">
           <h1
             id="hero-title"
@@ -55,7 +55,7 @@ export function Hero() {
             Builder Library
           </h1>
           <p
-            className="ml-auto mt-[25px] max-w-[520px] text-base text-[#22333B] md:text-xl"
+            className="ml-auto mt-[25px] max-w-[520px] text-base text-[#5E503F] md:text-xl"
             style={{
               fontFamily: "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
               lineHeight: 1.6,
