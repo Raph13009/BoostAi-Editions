@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "BoostAI Editions — The Digital Builder Library",
@@ -22,8 +21,7 @@ export default function RootLayout({
           color: "#0A0908",
         }}
       >
-        <main className="flex-1">{children}</main>
-        <Footer />
+        {children}
       </body>
     </html>
   );
